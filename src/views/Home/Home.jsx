@@ -151,9 +151,6 @@ function Home() {
 
     <div className="headBox">
       <img src={Logoimg} alt="" className="logo" />
-      <ul className="uls">
-        <li className="lis"><a className="a" href="/bonds">Bond</a></li>
-      </ul>
       <div>
       <Button
         className={buttonStyles}
@@ -207,7 +204,6 @@ function Home() {
       </div>
       <div className="fxBetween">
         <a href="/dashboard" className="btnBox_1">Enter App</a>
-        <a href="https://bourbondefi.gitbook.io/bourbon-finance/" className="btnBox_2 a" target="_blank">Documentation</a>
       </div>
     </div>
     {/* 底部链接栏 */}
