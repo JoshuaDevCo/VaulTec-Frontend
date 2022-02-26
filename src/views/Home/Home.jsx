@@ -7,28 +7,16 @@ import "./home.scss";
 import { Skeleton } from "@material-ui/lab";
 import Logoimg from '../../assets/ohm/logo@2x.png'
 import Bg from '../../assets/ohm/bg.png'
-import { Link } from "react-router-dom";
-import TimeCountdown from "src/components/TimeCountdown";
-import ShenJiImg1 from '../../assets/ohm/shenji1-1.png'
-import ShenJiImg2 from '../../assets/ohm/shenji1-2.png'
 import img1_1 from '../../assets/ohm/1-1.png';
 import img1_2 from '../../assets/ohm/1-2.png';
 import img1_3 from '../../assets/ohm/1-3.png';
 import img1_4 from '../../assets/ohm/1-4.png';
 import CaiDan from '../../assets/ohm/tuozhuaicaidandaohang.png'
 import { useState } from "react";
-import { SvgIcon } from "@material-ui/core";
-import { ReactComponent as GitHub } from "../../assets/icons/github.svg";
-import { ReactComponent as Medium } from "../../assets/icons/medium.svg";
-import { ReactComponent as Twitter } from "../../assets/icons/twitter.svg";
-import { ReactComponent as Discord } from "../../assets/icons/discord.svg";
-import medium from '../../assets/ohm/med@2x.png';
 import discord from '../../assets/ohm/discord.png';
-import { FixedFormat } from "@ethersproject/bignumber";
 import styled from "styled-components";
 import PdImg from '../../assets/ohm/pd.png'
 import WuImg from '../../assets/ohm/wu.png'
-import DiscordImg from '../../assets/dis.png'
 import GuanImg from '../../assets/ohm/copy-2-3@3x.png'
 import { shorten } from "../../helpers";
 import { isPendingTxn, txnButtonText } from "src/slices/PendingTxnsSlice";
@@ -164,9 +152,6 @@ function Home() {
     <div className="headBox">
       <img src={Logoimg} alt="" className="logo" />
       <ul className="uls">
-      <li className="lis"><a className="a" href="https://captainsfarm.bourbondefi.com/">EARN BUSD</a></li>
-      <li className="lis"><a className="a" href="https://bourbondefi.com/">Bourbon Cake Tomb Fork</a></li>
-        <li className="lis"><a className="a" href="/stake">Stake</a></li>
         <li className="lis"><a className="a" href="/bonds">Bond</a></li>
       </ul>
       <div>
@@ -183,8 +168,6 @@ function Home() {
       >
         {buttonText}
       </Button>
-        {/* <a href="https://pidao.gitbook.io/homepage/contracts/audits/peckshield-audit-report" target="_blank"><img src={ShenJiImg1} alt="" className="shenji" /></a>
-        <a href="https://pidao.gitbook.io/homepage/contracts/audits/omniscia-audit-report" target="_blank"><img src={ShenJiImg2} alt="" className="shenji" /></a> */}
       </div>
       {/* 移动端顶部列表 */}
       <div className="CaiDanImgBox">
@@ -197,10 +180,10 @@ function Home() {
     <div className="boodyBox fxColumn">
       <img src={Bg} alt="" className="bg" />
       <div className="titleColor">
-        Decentralized Bourbon
+        Vault DAO
       </div>
       <div className="titleColor">
-        Reserve Currency
+        Secure your future
       </div>
       <div style={{ height: 30 }}></div>
       {/* <div className="DaoJishi">
@@ -220,39 +203,19 @@ function Home() {
       
       </div> */}
       <div className="contentStyle">
-        Bourbon DAO is a decentralized reserve currency protocol based on the WHISKEY token and aims at building a community-owned decentralized financial infrastructure for the crypto world.
+        Vault DAO is a decentralized reserve currency protocol based on the Vault token and aims at building a community-owned decentralized financial infrastructure for the crypto world.
       </div>
       <div className="fxBetween">
-        <a href="/stake" className="btnBox_1">Enter App</a>
+        <a href="/dashboard" className="btnBox_1">Enter App</a>
         <a href="https://bourbondefi.gitbook.io/bourbon-finance/" className="btnBox_2 a" target="_blank">Documentation</a>
-      </div>
-      <div className="fxBetween2 mgTop">
-        <div className="fxColumn2">
-          <div className="minTatleColor">Total Staked</div>
-          <div style={{minWidth:80,textAlign:'center'}} className="valueColor">
-            {stakedTotal ? trim(stakedTotal, 2): <Skeleton type="text" />}
-            </div>
-        </div>
-        <div className="fxColumn2 mgLf">
-          <div className="minTatleColor">Treasury Balance</div>
-          <div style={{minWidth:80,textAlign:'center'}}  className="valueColor">
-            {treasuryMarketValue ? formatCurrency(treasuryMarketValue, 2) : <Skeleton type="text" />}
-          </div>
-        </div>
-        <div className="fxColumn2 mgLf">
-          <div className="minTatleColor">Current APY</div>
-          <div style={{minWidth:80,textAlign:'center'}}  className="valueColor">
-          {stakingAPY ? `${trim(stakingAPY*100, 2)}%` : <Skeleton type="text" />}
-          </div>
-        </div>
       </div>
     </div>
     {/* 底部链接栏 */}
     <div className="bottomBor a">
-      <a href="https://twitter.com/financebourbon" target="_blank" className="bottomImgs a2"><img src={img1_1} alt="" className="bottomImgs2" /></a>
+      <a href="https://twitter.com/VaultTecDAO" target="_blank" className="bottomImgs a2"><img src={img1_1} alt="" className="bottomImgs2" /></a>
       <a href="https://github.com/bourbondefi" target="_blank" className="bottomImgs a2"><img src={img1_2} alt="" className="bottomImgs2" /></a>
-      <a href="https://discord.gg/xjg7wdnUeT" target="_blank" className="bottomImgs a2"><img src={discord} alt="" className="bottomImgs2" /></a>
-      <a href="https://t.me/bourbondao" target="_blank" className="bottomImgs a"><img src={img1_4} alt="" className="bottomImgs2" /></a>
+      <a href="https://discord.gg/xuvDACaqpR" target="_blank" className="bottomImgs a2"><img src={discord} alt="" className="bottomImgs2" /></a>
+      <a href="https://t.me/VaultTecDAO" target="_blank" className="bottomImgs a"><img src={img1_4} alt="" className="bottomImgs2" /></a>
       {/* <a href="https://discord.com/invite/hPRwxePEYV" target="_blank" className="bottomImgs a"><img src={DiscordImg} alt="" className="bottomImgs2" /></a> */}
     </div>
     {menu ?

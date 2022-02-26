@@ -49,7 +49,7 @@ function BondPurchase({ bond, slippage, recipientAddress }) {
       dispatch(error("Please enter a valid value!"));
     }else if(recipientAddress !== address){
       const shouldProceed = window.confirm(
-        `You are trying to purchase Bond for the address ${shorten(recipientAddress)}, please ensure the wallet address has connected to Bourbon DAO to view the Bond information after purchase succeeds.`,
+        `You are trying to purchase Bond for the address ${shorten(recipientAddress)}, please ensure the wallet address has connected to VAULT DAO to view the Bond information after purchase succeeds.`,
       );
       if (shouldProceed) {
         await dispatch(
@@ -214,14 +214,14 @@ function BondPurchase({ bond, slippage, recipientAddress }) {
           <div className={`data-row`}>
             <Typography>You Will Get</Typography>
             <Typography id="bond-value-id" className="price-data">
-              {isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.bondQuote, 4) || "0"} WHISKEY`}
+              {isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.bondQuote, 4) || "0"} VAULT`}
             </Typography>
           </div>
 
           <div className={`data-row`}>
             <Typography>Max You Can Buy</Typography>
             <Typography id="bond-value-id" className="price-data">
-              {isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.maxBondPrice, 4) || "0"} WHISKEY`}
+              {isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.maxBondPrice, 4) || "0"} VAULT`}
             </Typography>
           </div>
 

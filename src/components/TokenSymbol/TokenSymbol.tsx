@@ -25,7 +25,7 @@ import MOBOXLogo from '../../assets/tokensymbol/mobox.png'
 import ETHLogo from '../../assets/tokensymbol/ETH@2x.png';
 import DAILogo from '../../assets/tokensymbol/DAI@2x.png'
 import USDCLogo from '../../assets/tokensymbol/USDC@2x.png'
-import WHISKEYLogo from '../../assets/iconpid.png'
+import VAULTLogo from '../../assets/iconpid.png'
 import SCREWBALLLogo from '../../assets/iconspid.png'
 import BSHARELogo from '../../assets/bomb2.png'
 import BOURBONCAKELogo from '../../assets/bomb1.png'
@@ -33,7 +33,7 @@ import BOURBONCAKELogo from '../../assets/bomb1.png'
 import LpTokenSymbol from './LpTokenSymbol';
 
 export const logosBySymbol: {[title: string]: string} = {
-  'WHISKEY':WHISKEYLogo,
+  'VAULT':VAULTLogo,
   'SCREWBALL':SCREWBALLLogo,
   'DAI':DAILogo,
   'USDC':USDCLogo,

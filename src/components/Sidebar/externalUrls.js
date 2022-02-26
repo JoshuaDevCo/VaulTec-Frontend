@@ -12,16 +12,6 @@ const externalUrls = [
   //   icon: <SvgIcon color="primary" component={ForumIcon} />,
   // },
   {
-    title: "Earn BUSD",
-    url: "https://captainsfarm.bourbondefi.com/",
-    icon: <SvgIcon color="primary" component={ForumIcon} />,
-   },
-  {
-    title: "Bourbon Cake Tomb Fork",
-    url: "https://www.bourbondefi.com/",
-    icon: <SvgIcon color="primary" component={ForumIcon} />,
-   },
-  {
     title: "Docs",
     url: "https://bourbondefi.gitbook.io/bourbon-finance/",
     icon: <SvgIcon color="primary" component={DocsIcon} />,

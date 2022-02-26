@@ -68,7 +68,7 @@ function NavContent() {
       <Box className="dapp-sidebar-inner" display="flex" justifyContent="space-between" flexDirection="column">
         <div className="dapp-menu-top">
           <Box className="branding-header">
-            <Link href="https://bourbondao.com" target="_blank">
+            <Link href="https://vaultdao.app" target="_blank">
               {/* <SvgIcon
                 color="primary"
                 component={OlympusIcon}
@@ -104,24 +104,6 @@ function NavContent() {
                   Dashboard
                 </Typography>
               </ANavLink>
-
-              <ANavLink
-                component={NavLink}
-                id="stake-nav"
-                to="/stake"
-                isActive={(match, location) => {
-                  return checkPage(match, location, "stake");
-                }}
-                bg2={Stakeimg2}
-              // className={`button-dapp-menu ${isActive ? "active" : ""}`}
-              >
-                <Typography variant="h6" className="fxCenter">
-                  <ANavIcon bg1={Stakeimg} />
-                  Stake
-                </Typography>
-              </ANavLink>
-              
-
              {/* <ANavLink
                 component={NavLink}
                 id="33-together-nav"

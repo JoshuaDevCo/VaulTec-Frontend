@@ -21,22 +21,22 @@
     },
     {
       "inputs": [],
-      "name": "WHISKEY",
+      "name": "VAULT",
       "outputs": [{ "internalType": "contract IERC20", "name": "", "type": "address" }],
       "stateMutability": "view",
       "type": "function"
     },
     {
       "inputs": [],
-      "name": "aWHISKEY",
+      "name": "aVAULT",
       "outputs": [{ "internalType": "contract IERC20", "name": "", "type": "address" }],
       "stateMutability": "view",
       "type": "function"
     },
     {
       "inputs": [
-        { "internalType": "address", "name": "_WHISKEY", "type": "address" },
-        { "internalType": "address", "name": "_aWHISKEY", "type": "address" },
+        { "internalType": "address", "name": "_VAULT", "type": "address" },
+        { "internalType": "address", "name": "_aVAULT", "type": "address" },
         { "internalType": "uint256", "name": "swapDuration", "type": "uint256" }
       ],
       "name": "initialize",

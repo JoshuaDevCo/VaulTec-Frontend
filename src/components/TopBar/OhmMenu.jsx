@@ -21,7 +21,7 @@ const addTokenToWallet = (tokenSymbol, tokenAddress) => async () => {
   if (window.ethereum) {
     const host = window.location.origin;
     // NOTE (appleseed): 33T token defaults to sOHM logo since we don't have a 33T logo yet
-    const tokenPath = tokenSymbol === "WHISKEY" ? OhmImg : SOhmImg;
+    const tokenPath = tokenSymbol === "VAULT" ? OhmImg : SOhmImg;
     const imageURL = `${host}/${tokenPath}`;
 
     try {
@@ -69,9 +69,9 @@ function OhmMenu() {
       onMouseLeave={e => handleClick(e)}
       id="ohm-menu-button-hover"
     >
-      <Button id="ohm-menu-button" size="large" variant="contained" color="secondary" title="WHISKEY" aria-describedby={id}>
+      <Button id="ohm-menu-button" size="large" variant="contained" color="secondary" title="VAULT" aria-describedby={id}>
         <SvgIcon component={InfoIcon} color="primary" />
-        <Typography>WHISKEY</Typography>
+        <Typography>VAULT</Typography>
       </Button>
 
       <Popper id={id} open={open} anchorEl={anchorEl} placement="bottom-start" transition>
@@ -99,7 +99,7 @@ function OhmMenu() {
                   >
                     <Button size="large" variant="contained" color="secondary" fullWidth>
                       <Typography align="left">
-                      Get WHISKEY-BUSD LP <SvgIcon component={ArrowUpIcon} htmlColor="#A3A3A3" />
+                      Get VAULT-BUSD LP <SvgIcon component={ArrowUpIcon} htmlColor="#A3A3A3" />
                       </Typography>
                     </Button>
                   </Link>
@@ -118,13 +118,9 @@ function OhmMenu() {
                     <Divider color="secondary" />
                     <p>ADD TOKEN TO WALLET</p>
                     <Box display="flex" flexDirection="row" justifyContent="space-between">
-                      <Button variant="contained" color="secondary" onClick={addTokenToWallet("WHISKEY", PID_ADDRESS)}>
-                        <TokenIcon size={32} symbol="WHISKEY"/>
-                        <Typography variant="body1">WHISKEY</Typography>
-                      </Button>
-                      <Button variant="contained" color="secondary" onClick={addTokenToWallet("SCREWBALL", SPID_ADDRESS)}>
-                        <TokenIcon size={32} symbol="SCREWBALL"/> 
-                        <Typography variant="body1">SCREWBALL</Typography>
+                      <Button variant="contained" color="secondary" onClick={addTokenToWallet("VAULT", PID_ADDRESS)}>
+                        <TokenIcon size={32} symbol="VAULT"/>
+                        <Typography variant="body1">VAULT</Typography>
                       </Button>
                       {/* <Button variant="contained" color="secondary" onClick={addTokenToWallet("33T", PT_TOKEN_ADDRESS)}>
                         <Typography variant="body1">33T</Typography>

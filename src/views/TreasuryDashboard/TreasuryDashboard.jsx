@@ -68,7 +68,7 @@ function TreasuryDashboard() {
     //   setData(metrics);
 
     //   let staked = r.data.protocolMetrics.map(entry => ({
-    //     staked: (parseFloat(entry.sOhmCirculatingSupply) / parseFloat(entry.WHISKEYCirculatingSupply)) * 100,
+    //     staked: (parseFloat(entry.sOhmCirculatingSupply) / parseFloat(entry.VAULTCirculatingSupply)) * 100,
     //     timestamp: entry.timestamp,
     //   }));
     //   staked = staked.filter(pm => pm.staked < 100);
@@ -174,7 +174,7 @@ function TreasuryDashboard() {
             <Grid item lg={6} md={6} sm={12} xs={12}>
               <Paper className="ohm-card">
                   <Typography variant="h6" color="textSecondary">
-                    WHISKEY Price
+                    VAULT Price
                   </Typography>
                   <Typography variant="h5">
                     {/* appleseed-fix */}
@@ -195,46 +195,6 @@ function TreasuryDashboard() {
                   /> */}
                 </Paper>
             </Grid>
-
-            <Grid item lg={6} md={6} sm={12} xs={12}>
-              <Paper className="ohm-card">
-                  <Typography variant="h6" color="textSecondary">
-                    Current Index
-                    <InfoTooltip
-                      message={
-                        "The current index tracks the amount of SCREWBALL accumulated since the beginning of staking. Basically, how much SCREWBALL one would have if they staked and held a single WHISKEY from day 1."
-                      }
-                    />
-                  </Typography>
-                  <Typography variant="h5">
-                    {currentIndex ? trim(currentIndex, 0) / 10000 + " SCREWBALL" : <Skeleton type="text" />}
-                  </Typography>
-                  {/* <Chart
-                    type="stack"
-                    data={data}
-                    dataKey={[
-                      "treasuryDaiMarketValue",
-                      "treasuryFraxMarketValue",
-                      "treasuryWETHMarketValue",
-                      "treasuryXsushiMarketValue",
-                    ]}
-                    stopColor={
-                      ["#F5AC37", "#EA9276"],
-                      ["#768299", "#98B3E9"],
-                      ["#DC30EB", "#EA98F1"],
-                      ["#8BFF4D", "#4C8C2A"],
-                    ]}
-                    headerText="Market Value of Treasury Assets"
-                    headerSubText={`${data && formatCurrency(data[0]?.treasuryMarketValue)}`}
-                    bulletpointColors={bulletpoints.coin}
-                    itemNames={tooltipItems.coin}
-                    itemType={itemType.dollar}
-                    infoTooltipMessage={tooltipInfoMessages.mvt}
-                    expandedGraphStrokeColor={theme.palette.graphStrokeColor}
-                  /> */}
-                </Paper>
-            </Grid>
-
             <Grid item lg={6} md={6} sm={12} xs={12}>
               <Paper className="ohm-card">
                 <Typography variant="h6" color="textSecondary">
@@ -309,7 +269,7 @@ function TreasuryDashboard() {
             <Grid item lg={6} md={6} sm={12} xs={12}>
               <Paper className="ohm-card">
                 <Typography variant="h6" color="textSecondary">
-                  Backing per WHISKEY
+                  Backing per VAULT
                 </Typography>
                 <Typography variant="h5">
                   {backingPerOhm ? formatCurrency(backingPerOhm, 2) : <Skeleton type="text" />}
@@ -353,57 +313,6 @@ function TreasuryDashboard() {
                   itemNames={tooltipItems.apy}
                   itemType={itemType.percentage}
                   infoTooltipMessage={tooltipInfoMessages.apy}
-                  expandedGraphStrokeColor={theme.palette.graphStrokeColor}
-                /> */}
-              </Paper>
-            </Grid>
-
-            <Grid item lg={6} md={6} sm={12} xs={12}>
-              <Paper className="ohm-card">
-                <Typography variant="h6" color="textSecondary">
-                WHISKEY Staked
-                  </Typography>
-                  <Typography variant="h5">
-                    {staked ? `${trim(staked, 2)}%` : <Skeleton type="text" />}
-                  </Typography>
-                {/* <Chart
-                  type="line"
-                  data={runway}
-                  dataKey={["runwayCurrent"]}
-                  color={theme.palette.text.primary}
-                  stroke={[theme.palette.text.primary]}
-                  headerText="Runway Available"
-                  headerSubText={`${data && trim(data[0]?.runwayCurrent, 1)} Days`}
-                  dataFormat="days"
-                  bulletpointColors={bulletpoints.runway}
-                  itemNames={tooltipItems.runway}
-                  itemType={""}
-                  infoTooltipMessage={tooltipInfoMessages.runway}
-                  expandedGraphStrokeColor={theme.palette.graphStrokeColor}
-                /> */}
-              </Paper>
-            </Grid>
-            <Grid item lg={6} md={6} sm={12} xs={12}>
-              <Paper className="ohm-card">
-                <Typography variant="h6" color="textSecondary">
-                APY
-                </Typography>
-                <Typography variant="h5">
-                  {stakingAPY ? `${trim(stakingAPY*100, 2)}%` : <Skeleton type="text" />}
-                </Typography> 
-                {/* <Chart
-                  type="line"
-                  data={runway}
-                  dataKey={["runwayCurrent"]}
-                  color={theme.palette.text.primary}
-                  stroke={[theme.palette.text.primary]}
-                  headerText="Runway Available"
-                  headerSubText={`${data && trim(data[0]?.runwayCurrent, 1)} Days`}
-                  dataFormat="days"
-                  bulletpointColors={bulletpoints.runway}
-                  itemNames={tooltipItems.runway}
-                  itemType={""}
-                  infoTooltipMessage={tooltipInfoMessages.runway}
                   expandedGraphStrokeColor={theme.palette.graphStrokeColor}
                 /> */}
               </Paper>

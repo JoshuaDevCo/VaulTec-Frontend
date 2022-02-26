@@ -212,7 +212,6 @@ function App() {
           <div className={`${path === "/" ? null : classes.content} ${isSmallerScreen && classes.contentShift}`}>
             <Switch>
               <Route exact path="/dashboard" component={TreasuryDashboard} />
-              <Route path="/stake" component={Stake} />
               <Route exact path="/" component={Home} />
               <Route path="/bonds">
                 {bonds.map(bond => {

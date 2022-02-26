@@ -33,7 +33,7 @@ export const dai = new StableBond({
   bondContractABI: DaiBondContract,
   networkAddrs: {
     [NetworkID.Mainnet]: {
-      bondAddress: "0x8A8dD632f9461138CAA15f57d0F107eFFa38dD47",
+      bondAddress: "0xe6c2F6bb2C9AC6114DD6491A5C6C3fD34d547c3F",
       reserveAddress: addresses[NetworkID.Mainnet].DAI_ADDRESS,
     },
     [NetworkID.Testnet]: {
@@ -70,16 +70,16 @@ export const eth = new CustomBond({
   },
 });
 
-export const bourboncake = new CustomBond({
-  name: "BOURBONCAKE",
-  displayName: "BOURBONCAKE",
-  bondToken: "BOURBONCAKE",
+export const VAULT = new CustomBond({
+  name: "VAULT",
+  displayName: "VAULT",
+  bondToken: "VAULT",
   bondIconSvg: FraxImg,
   bondContractABI: FraxBondContract,
   networkAddrs: {
     [NetworkID.Mainnet]: {
-      bondAddress: "0x43B09D0d25836c915D75141427DCcd68A82202D3",
-      reserveAddress: "0x7D57D8D48059829F52Db6De53190618f67AAe32b",
+      bondAddress: "0x4056B96c76F80b3bd9CCe2BdA5Ac85FF8b9C8372",
+      reserveAddress: "0x2794553775D6c41f54641C464CdEF5037861A0Dd",
     },
     [NetworkID.Testnet]: {
       bondAddress: "0xca7b90f8158A4FAA606952c023596EE6d322bcf0",
@@ -98,16 +98,16 @@ export const bourboncake = new CustomBond({
 });
 
 export const ohm_dai = new LPBond({
-  name: "WHISKEY-BUSD",
-  displayName: "WHISKEY-BUSD LP",
-  bondToken: "WHISKEY-BUSD",
+  name: "VAULT-BUSD",
+  displayName: "VAULT-BUSD LP",
+  bondToken: "VAULT-BUSD",
   bondIconSvg: OhmDaiImg,
   bondContractABI: BondOhmDaiContract,
   reserveContract: ReserveOhmDaiContract,
   networkAddrs: {
     [NetworkID.Mainnet]: {
       bondAddress: "0x7F1b0Dab5C7c8d7a63758946f853049bC53f4306",
-      reserveAddress: "0x96b6d5482313eECC031aFEb2Fb32da2BA7439BA2",
+      reserveAddress: "0x8cc28A6400E7745193c7Da8e6081e108f897b461",
     },
     [NetworkID.Testnet]: {
       bondAddress: "0xcF449dA417cC36009a1C6FbA78918c31594B9377",
@@ -205,7 +205,7 @@ export const pid_lusd = new LPBond({
 // Add new bonds to this array!!
 // export const allBonds = [dai, frax, eth, ohm_dai, ohm_frax, lusd, pid_lusd];
 
-export const allBonds = [dai,ohm_dai,lusd,eth,ohm_frax,bourboncake]
+export const allBonds = [dai, VAULT]
 // export const allBonds:LPBond[]=[]
 export const treasuryBalanceAll = async ( networkID: NetworkID, provider: StaticJsonRpcProvider) => {
   return (await Promise.all(allBonds.map(async (item) => {

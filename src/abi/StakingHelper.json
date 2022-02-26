@@ -22,7 +22,7 @@
         },
         {
           "internalType": "address",
-          "name": "_WHISKEY",
+          "name": "_VAULT",
           "type": "address"
         }
       ],
@@ -44,7 +44,7 @@
     },
     {
       "inputs": [],
-      "name": "WHISKEY",
+      "name": "VAULT",
       "outputs": [
         {
           "internalType": "address",

@@ -111,7 +111,7 @@ function Stake() {
     // 1st catch if quantity > balance
     let gweiValue = ethers.utils.parseUnits(quantity, "gwei");
     if (action === "stake" && gweiValue.gt(ethers.utils.parseUnits(ohmBalance, "gwei"))) {
-      return dispatch(error("You cannot stake more than your WHISKEY balance."));
+      return dispatch(error("You cannot stake more than your VAULT balance."));
     }
 
     if (action === "unstake" && gweiValue.gt(ethers.utils.parseUnits(sohmBalance, "gwei"))) {
@@ -215,17 +215,6 @@ function Stake() {
                       </Typography>
                     </div>
                   </Grid>
-
-                  <Grid item xs={12} sm={4} md={4} lg={4}>
-                    <div className="stake-index">
-                      <Typography variant="h5" color="textSecondary">
-                        Current Index
-                      </Typography>
-                      <Typography variant="h4">
-                        {currentIndex ? <>{trim(currentIndex, 0) / 10000} WHISKEY</> : <Skeleton width="150px" />}
-                      </Typography>
-                    </div>
-                  </Grid>
                 </Grid>
               </div>
             </Grid>
@@ -236,7 +225,7 @@ function Stake() {
                   <div className="wallet-menu" id="wallet-menu">
                     {modalButton}
                   </div>
-                  <Typography variant="h6">Connect your wallet to stake WHISKEY</Typography>
+                  <Typography variant="h6">Connect your wallet to stake VAULT</Typography>
                 </div>
               ) : (
                 <>
@@ -295,7 +284,7 @@ function Stake() {
                               onChangeStake("stake");
                             }}
                           >
-                            {txnButtonText(pendingTransactions, "staking", "Stake WHISKEY")}
+                            {txnButtonText(pendingTransactions, "staking", "Stake VAULT")}
                           </Button>
                         ) : (
                           <Button
@@ -323,7 +312,7 @@ function Stake() {
                               onChangeStake("unstake");
                             }}
                           >
-                            {txnButtonText(pendingTransactions, "unstaking", "Unstake WHISKEY")}
+                            {txnButtonText(pendingTransactions, "unstaking", "Unstake VAULT")}
                           </Button>
                         ) : (
                           <Button
@@ -346,7 +335,7 @@ function Stake() {
                     <div className="data-row">
                       <Typography variant="body1">Your Balance</Typography>
                       <Typography variant="body1">
-                        {isAppLoading ? <Skeleton width="80px" /> : <>{trim(ohmBalance, 4)} WHISKEY</>}
+                        {isAppLoading ? <Skeleton width="80px" /> : <>{trim(ohmBalance, 4)} VAULT</>}
                       </Typography>
                     </div>
 

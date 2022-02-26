@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
-  "contractName": "WHISKEYPreSale",
-  "sourceName": "contracts/sale/olympus/presale/WHISKEYPresale.sol",
+  "contractName": "VAULTPreSale",
+  "sourceName": "contracts/sale/olympus/presale/VAULTPresale.sol",
   "abi": [
     {
       "inputs": [
@@ -48,7 +48,7 @@
     },
     {
       "inputs": [],
-      "name": "aWHISKEY",
+      "name": "aVAULT",
       "outputs": [
         {
           "internalType": "address",
@@ -126,7 +126,7 @@
         },
         {
           "internalType": "address",
-          "name": "_aWHISKEY",
+          "name": "_aVAULT",
           "type": "address"
         },
         {
@@ -172,7 +172,7 @@
           "type": "uint256"
         }
       ],
-      "name": "purchaseaWHISKEY",
+      "name": "purchaseaVAULT",
       "outputs": [
         {
           "internalType": "bool",
@@ -220,11 +220,11 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "_sendaWHISKEYTo",
+          "name": "_sendaVAULTTo",
           "type": "address"
         }
       ],
-      "name": "sendRemainingaWHISKEY",
+      "name": "sendRemainingaVAULT",
       "outputs": [
         {
           "internalType": "bool",

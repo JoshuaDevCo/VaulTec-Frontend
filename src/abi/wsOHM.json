@@ -1,7 +1,7 @@
 {
   "abi": [
     {
-      "inputs": [{ "internalType": "address", "name": "_sWHISKEY", "type": "address" }],
+      "inputs": [{ "internalType": "address", "name": "_sVAULT", "type": "address" }],
       "stateMutability": "nonpayable",
       "type": "constructor"
     },
@@ -88,14 +88,14 @@
     },
     {
       "inputs": [],
-      "name": "sWHISKEY",
+      "name": "sVAULT",
       "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
       "stateMutability": "view",
       "type": "function"
     },
     {
       "inputs": [{ "internalType": "uint256", "name": "_amount", "type": "uint256" }],
-      "name": "sWHISKEYTowWHISKEY",
+      "name": "sVAULTTowVAULT",
       "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
       "stateMutability": "view",
       "type": "function"
@@ -144,7 +144,7 @@
     },
     {
       "inputs": [{ "internalType": "uint256", "name": "_amount", "type": "uint256" }],
-      "name": "wWHISKEYTosWHISKEY",
+      "name": "wVAULTTosVAULT",
       "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
       "stateMutability": "view",
       "type": "function"
