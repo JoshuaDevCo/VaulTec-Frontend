@@ -183,6 +183,7 @@ function Home() {
       </div>
       <div className="fxBetween">
         <a href="/dashboard" className="btnBox_1">Enter App</a>
+        <a href="https://vaulttecdao.gitbook.io/whitepaper/" className="btnBox_2 a" target="_blank">Documentation</a>
       </div>
     </div>
     <div className="bottomBor a">

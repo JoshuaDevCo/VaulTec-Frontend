@@ -6,6 +6,11 @@ import {  SvgIcon } from "@material-ui/core";
 import styled from "styled-components";
 
 const externalUrls = [
+    {
+        title: "Docs",
+        url: "https://vaulttecdao.gitbook.io/whitepaper/",
+        icon: <SvgIcon color="primary" component={DocsIcon} />,
+      },
 ];
 
 export default externalUrls;
