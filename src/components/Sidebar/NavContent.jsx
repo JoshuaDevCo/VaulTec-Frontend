@@ -3,11 +3,6 @@ import { NavLink } from "react-router-dom";
 import Social from "./Social";
 import externalUrls from "./externalUrls";
 import styled from 'styled-components';
-// import { ReactComponent as StakeIcon } from "../../assets/icons/stake.svg";
-// import { ReactComponent as BondIcon } from "../../assets/icons/bond.svg";
-// import { ReactComponent as DashboardIcon } from "../../assets/icons/dashboard.svg";
-// import { ReactComponent as OlympusIcon } from "../../assets/icons/olympus-nav-header.svg";
-import { ReactComponent as PoolTogetherIcon } from "../../assets/icons/33-together.svg";
 import { trim, shorten } from "../../helpers";
 import { useAddress, useWeb3Context } from "src/hooks/web3Context";
 import useBonds from "../../hooks/Bonds";
@@ -19,20 +14,6 @@ import Bondimg from '../../assets/ohm/bond@2x.png'
 import Bondimg2 from '../../assets/ohm/bond2@2x.png'
 import Dashboardimg from '../../assets/ohm/dashboard@2x.png'
 import Dashboardimg2 from '../../assets/ohm/dashboard2@2x.png'
-import Docsimg from '../../assets/ohm/docs@2x.png'
-import Docsimg2 from '../../assets/ohm/docs2@2x.png'
-import Stakeimg from '../../assets/ohm/stake@2x.png'
-import Stakeimg2 from '../../assets/ohm/stake2@2x.png'
-
-import Togetherimg from '../../assets/ohm/33-1@2x.png'
-import Togetherimg2 from '../../assets/ohm/33@2x.png'
-
-import NFTimg from '../../assets/ohm/nft-1@2x.png'
-import NFTimg2 from '../../assets/ohm/nft@2x.png'
-
-
-
-
 
 function NavContent() {
   const [isActive] = useState();
@@ -69,26 +50,21 @@ function NavContent() {
         <div className="dapp-menu-top">
           <Box className="branding-header">
             <Link href="https://vaultdao.app" target="_blank">
-              {/* <SvgIcon
-                color="primary"
-                component={OlympusIcon}
-                viewBox="0 0 151 100"
-                style={{ minWdth: "151px", minHeight: "98px", width: "151px" }}
-              /> */}
               <img src={LogoImg} alt="" style={{ width: "151px" }} />
             </Link>
-
-            {/* {address && (
-              <div className="wallet-link">
-                <Link href={`https://etherscan.io/address/${address}`} target="_blank">
-                  {shorten(address)}
-                </Link>
-              </div>
-            )} */}
           </Box>
 
           <div className="dapp-menu-links">
             <div className="dapp-nav" id="navbarNav">
+            <Link
+                    href={`https://pancakeswap.finance/swap/0x2794553775D6c41f54641C464CdEF5037861A0Dd`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                <Typography align="left">
+                      Buy on PancakeSwap
+                </Typography>
+              </Link>
               <ANavLink
                 component={NavLink}
                 id="dash-nav"
@@ -97,43 +73,12 @@ function NavContent() {
                   return checkPage(match, location, "dashboard");
                 }}
                 bg2={Dashboardimg2}
-              // className={`button-dapp-menu ${isActive ? "active" : ""}`}
               >
                 <Typography variant="h6" className="fxCenter">
                   <ANavIcon bg1={Dashboardimg} />
                   Dashboard
                 </Typography>
               </ANavLink>
-             {/* <ANavLink
-                component={NavLink}
-                id="33-together-nav"
-                to="/33-together"
-                isActive={(match, location) => {
-                  return checkPage(match, location, "33-together");
-                }}
-                className={`button-dapp-menu ${isActive ? "active" : ""}`}
-                bg2={Togetherimg2}
-              >
-                <Typography variant="h6">
-                  <ANavIcon bg1={Togetherimg} />
-                  3,3 π
-                </Typography>
-              </ANavLink>
-              <ANavLink
-                component={NavLink}
-                id="nft"
-                to="/nft"
-                isActive={(match, location) => {
-                  return checkPage(match, location, "nft");
-                }}
-                className={`button-dapp-menu ${isActive ? "active" : ""}`}
-                bg2={NFTimg2}
-              >
-                <Typography variant="h6">
-                  <ANavIcon bg1={NFTimg} />
-                  PINFT
-                </Typography>
-              </ANavLink> */}
               <ANavLink
                 component={NavLink}
                 id="bond-nav"
@@ -142,7 +87,6 @@ function NavContent() {
                   return checkPage(match, location, "bonds");
                 }}
                 bg2={Bondimg2}
-              // className={`button-dapp-menu ${isActive ? "active" : ""}`}
               >
                 <Typography variant="h6" className="fxCenter">
                   <ANavIcon bg1={Bondimg} />

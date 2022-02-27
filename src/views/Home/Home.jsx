@@ -4,12 +4,9 @@ import { formatCurrency, getDisplayBalance, trim } from "../../helpers";
 import {useEffect,useCallback, useMemo} from 'react'
 import { useWeb3Context } from "src/hooks/web3Context";
 import "./home.scss";
-import { Skeleton } from "@material-ui/lab";
 import Logoimg from '../../assets/ohm/logo@2x.png'
 import Bg from '../../assets/ohm/bg.png'
 import img1_1 from '../../assets/ohm/1-1.png';
-import img1_2 from '../../assets/ohm/1-2.png';
-import img1_3 from '../../assets/ohm/1-3.png';
 import img1_4 from '../../assets/ohm/1-4.png';
 import CaiDan from '../../assets/ohm/tuozhuaicaidandaohang.png'
 import { useState } from "react";
@@ -92,7 +89,6 @@ function Home() {
   
   const openStartTimes=useMemo(()=>{
     return 1636113600000
-    // return Date.now() + 5000
   },[])
 
   const isOpen = useMemo(() => {
@@ -166,7 +162,6 @@ function Home() {
         {buttonText}
       </Button>
       </div>
-      {/* 移动端顶部列表 */}
       <div className="CaiDanImgBox">
         <img src={CaiDan} alt="" onClick={() => ShowhideClick()} className="caidanimg" />
       </div>
@@ -183,22 +178,6 @@ function Home() {
         Secure your future
       </div>
       <div style={{ height: 30 }}></div>
-      {/* <div className="DaoJishi">
-        {isOpen ? <>
-          <span>Launch in</span><TimeCountdown onComplete={onComplete} base={new Date} deadline={new Date(openOverTimes)} />
-          
-        </>:<>
-          <span>ITO Application Ends In</span><TimeCountdown onComplete={onComplete} base={new Date} deadline={new Date(openStartTimes)} />
-        </>} 
-      </div> */}
-
-      {/* <div style={{ display: "flex", justifyContent: "center", }}>
-       
-       <a href="https://medium.com/@PIDAOFinance/initial-telegram-offering-the-pidao-fair-launch-event-fafc6ec009aa" style={{ color: "#fff" }} target="_blank">ITO Rules</a>
-        <div style={{ width: 20 }} />
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfM6zyJyhaOcp-QmOzZmleU4wVthPP13x-HamiKO5cMiTwHUw/viewform" style={{ color: "#fff" }} target="_blank">Apply Now</a>
-      
-      </div> */}
       <div className="contentStyle">
         Vault DAO is a decentralized reserve currency protocol based on the Vault token and aims at building a community-owned decentralized financial infrastructure for the crypto world.
       </div>
@@ -206,29 +185,19 @@ function Home() {
         <a href="/dashboard" className="btnBox_1">Enter App</a>
       </div>
     </div>
-    {/* 底部链接栏 */}
     <div className="bottomBor a">
       <a href="https://twitter.com/VaultTecDAO" target="_blank" className="bottomImgs a2"><img src={img1_1} alt="" className="bottomImgs2" /></a>
-      <a href="https://github.com/bourbondefi" target="_blank" className="bottomImgs a2"><img src={img1_2} alt="" className="bottomImgs2" /></a>
       <a href="https://discord.gg/xuvDACaqpR" target="_blank" className="bottomImgs a2"><img src={discord} alt="" className="bottomImgs2" /></a>
       <a href="https://t.me/VaultTecDAO" target="_blank" className="bottomImgs a"><img src={img1_4} alt="" className="bottomImgs2" /></a>
-      {/* <a href="https://discord.com/invite/hPRwxePEYV" target="_blank" className="bottomImgs a"><img src={DiscordImg} alt="" className="bottomImgs2" /></a> */}
     </div>
     {menu ?
       <div className="moban" onClick={() => ShowhideClick()} >
         <div className="CaiDanlieBiao">
           <img src={Logoimg} alt="" className="logo2" />
-         {/* <div className="lis2"><a target="_blank" className="a" href="https://pidao.gitbook.io/homepage/whitepapers/pidao-pro">PIDAO Pro</a></div> */}
           <div className="lis2"><a className="a" href="/stake">Stake</a></div>
           <div className="lis2"><a className="a" href="/bonds">Bond</a></div>
-         {/* <div className="lis2"><a target="_blank" className="a" href="https://pidao.gitbook.io/homepage/pidao-finance/faqs">FAQs</a></div>
-          <div className="lis2"><a target="_blank" className="a" href="https://pidao.gitbook.io/homepage/community/governance">Get Involved</a></div> */}
-          {/* <a href="https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-OlympusDAO-v1.0.pdf" target="_blank" ><img src={ShenJiImg1} alt="" className="shenji2" /></a>
-          <a href="https://omniscia.io/olympusdao-algorithmic-currency-protocol/" target="_blank"><img src={ShenJiImg2} alt="" className="shenji3" /></a> */}
         </div>
       </div> : null}
-
-    {/* 支付弹窗 */}
 
     {Popup ?
       <div className="Max_Box">

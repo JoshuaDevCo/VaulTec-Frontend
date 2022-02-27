@@ -10,7 +10,7 @@ const darkTheme = {
   gold: "#ffe300",
   gray: "#A3A3A3",
   textHighlightColor: "#ffe300",
-  backgroundColor: "#1F232D",
+  backgroundColor: "#000000",
   // background:`
   // linear-gradient(180deg, rgba(8, 15, 53, 0), rgba(0, 0, 10, 0.9))
   // `,
@@ -23,8 +23,8 @@ const darkTheme = {
   //   radial-gradient(circle at 10% 0%, rgba(187, 211, 204, 0.33), rgba(187,211,204,0) 35%),
   //   radial-gradient(circle at 11% 100%, rgba(131, 165, 203, 0.3), rgba(131, 165, 203, 0) 30%)
   //   `,
-  paperBg: "#282D37",
-  modalBg: "#282D37",
+  paperBg: "#000000",
+  modalBg: "#000000",
   popoverBg: "rgba(54, 56, 64, 0.99)",
   menuBg: "#36384080",
   backdropBg: "rgba(54, 56, 64, 0.5)",

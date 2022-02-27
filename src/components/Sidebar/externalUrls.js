@@ -6,21 +6,6 @@ import {  SvgIcon } from "@material-ui/core";
 import styled from "styled-components";
 
 const externalUrls = [
-  // {
-  //   title: "Feedback",
-  //   url: "",
-  //   icon: <SvgIcon color="primary" component={ForumIcon} />,
-  // },
-  {
-    title: "Docs",
-    url: "https://bourbondefi.gitbook.io/bourbon-finance/",
-    icon: <SvgIcon color="primary" component={DocsIcon} />,
-  },
-  //{
-  //  title: "Feedback",
-  //  url: "https://docs.google.com/forms/d/e/1FAIpQLScnaNowC-y5Yj9QET3j67aqpKN6FWFAit973ICQzAsERaVw0w/viewform",
-  //  icon: <SvgIcon color="primary" component={FeedbackIcon} />,
-  // }
 ];
 
 export default externalUrls;

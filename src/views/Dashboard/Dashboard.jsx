@@ -63,11 +63,6 @@ function Dashboard() {
                   <Skeleton width="250px" />
                 ) : (
                   `${new Intl.NumberFormat("en-US", {
-                    maximumFractionDigits: 0,
-                    minimumFractionDigits: 0,
-                  }).format(circSupply)}
-                    /
-                    ${new Intl.NumberFormat("en-US", {
                       maximumFractionDigits: 0,
                       minimumFractionDigits: 0,
                     }).format(totalSupply)}`

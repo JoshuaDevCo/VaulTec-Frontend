@@ -9,16 +9,12 @@ import { ReactComponent as OhmFraxImg } from "src/assets/tokens/OHM-FRAX.svg";
 import { ReactComponent as OhmLusdImg } from "src/assets/tokens/OHM-LUSD.svg";
 import { ReactComponent as wETHImg } from "src/assets/tokens/wETH.svg";
 import { ReactComponent as LusdImg } from "src/assets/tokens/LUSD.svg";
-
-import { abi as FraxOhmBondContract } from "src/abi/bonds/OhmFraxContract.json";
 import { abi as BondOhmDaiContract } from "src/abi/bonds/OhmDaiContract.json";
-import { abi as BondOhmLusdContract } from "src/abi/bonds/OhmLusdContract.json";
 import { abi as DaiBondContract } from "src/abi/bonds/DaiContract.json";
 import { abi as ReserveOhmLusdContract } from "src/abi/reserves/OhmLusd.json";
 import { abi as ReserveOhmDaiContract } from "src/abi/reserves/OhmDai.json";
 import { abi as ReserveOhmFraxContract } from "src/abi/reserves/OhmFrax.json";
 import { abi as FraxBondContract } from "src/abi/bonds/FraxContract.json";
-import { abi as LusdBondContract } from "src/abi/bonds/LusdContract.json";
 import { abi as EthBondContract } from "src/abi/bonds/EthContract.json";
 // import ERC20 from "src/lib/ERC20";
 import { StaticJsonRpcProvider } from "@ethersproject/providers";
@@ -51,7 +47,7 @@ export const eth = new CustomBond({
   bondContractABI: EthBondContract,
   networkAddrs: {
     [NetworkID.Mainnet]: {
-      bondAddress: "0x9A2E559bBe717497dD2cE9d83A463dcF7ea11790",
+      bondAddress: "0x1abDAE9d6BcB3C7B81f0a486f144e2aE626EBAe8",
       reserveAddress: addresses[NetworkID.Mainnet].BNB_ADDRESS,
     },
     [NetworkID.Testnet]: {
@@ -75,11 +71,11 @@ export const VAULT = new CustomBond({
   displayName: "VAULT",
   bondToken: "VAULT",
   bondIconSvg: FraxImg,
-  bondContractABI: FraxBondContract,
+  bondContractABI: EthBondContract,
   networkAddrs: {
     [NetworkID.Mainnet]: {
-      bondAddress: "0x4056B96c76F80b3bd9CCe2BdA5Ac85FF8b9C8372",
-      reserveAddress: "0x2794553775D6c41f54641C464CdEF5037861A0Dd",
+      bondAddress: "0x243cECCC72e44fc28427bce4a2C334A0e131e64B",
+      reserveAddress: addresses[NetworkID.Mainnet].PID_ADDRESS,
     },
     [NetworkID.Testnet]: {
       bondAddress: "0xca7b90f8158A4FAA606952c023596EE6d322bcf0",
@@ -87,8 +83,8 @@ export const VAULT = new CustomBond({
     },
   },
   customTreasuryBalanceFunc: async function (this: CustomBond, networkID, provider) {
-    const FraxBondContract = this.getContractForBond(networkID, provider);
-    let bourboncakePrice = await FraxBondContract.assetPrice();
+    const EthBondContract = this.getContractForBond(networkID, provider);
+    let bourboncakePrice = await EthBondContract.assetPrice();
     bourboncakePrice = bourboncakePrice / Math.pow(10, 8);
     const token = this.getContractForReserve(networkID, provider);
     let bourboncakeAmount = await token.balanceOf(addresses[networkID].TREASURY_ADDRESS);
@@ -106,12 +102,12 @@ export const ohm_dai = new LPBond({
   reserveContract: ReserveOhmDaiContract,
   networkAddrs: {
     [NetworkID.Mainnet]: {
-      bondAddress: "0x7F1b0Dab5C7c8d7a63758946f853049bC53f4306",
+      bondAddress: "0xD21657E51E398678cBcDfF9337100D6C01aEC4Ed",
       reserveAddress: "0x8cc28A6400E7745193c7Da8e6081e108f897b461",
     },
     [NetworkID.Testnet]: {
-      bondAddress: "0xcF449dA417cC36009a1C6FbA78918c31594B9377",
-      reserveAddress: "0x8D5a22Fb6A1840da602E56D1a260E56770e0bCE2",
+      bondAddress: "0x7F1b0Dab5C7c8d7a63758946f853049bC53f4306",
+      reserveAddress: "0x8cc28A6400E7745193c7Da8e6081e108f897b461",
     },
   },
   lpUrl:
@@ -205,7 +201,7 @@ export const pid_lusd = new LPBond({
 // Add new bonds to this array!!
 // export const allBonds = [dai, frax, eth, ohm_dai, ohm_frax, lusd, pid_lusd];
 
-export const allBonds = [dai, VAULT]
+export const allBonds = [dai, ohm_dai, eth]
 // export const allBonds:LPBond[]=[]
 export const treasuryBalanceAll = async ( networkID: NetworkID, provider: StaticJsonRpcProvider) => {
   return (await Promise.all(allBonds.map(async (item) => {

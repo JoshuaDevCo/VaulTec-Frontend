@@ -16,13 +16,11 @@ import { calcBondDetails } from "./slices/BondSlice";
 import { loadAppDetails } from "./slices/AppSlice";
 import { loadAccountDetails, calculateUserBondDetails } from "./slices/AccountSlice";
 
-import { Home, Stake, ChooseBond, Bond, Dashboard, TreasuryDashboard, PoolTogether,NFTPage } from "./views";
+import { Home, Stake, ChooseBond, Bond, Dashboard, TreasuryDashboard} from "./views";
 import Sidebar from "./components/Sidebar/Sidebar.jsx";
 import TopBar from "./components/TopBar/TopBar.jsx";
 import NavDrawer from "./components/Sidebar/NavDrawer.jsx";
-import LoadingSplash from "./components/Loading/LoadingSplash";
 import Messages from "./components/Messages/Messages";
-import NotFound from "./views/404/NotFound";
 
 import { dark as darkTheme } from "./themes/dark.js";
 import { light as lightTheme } from "./themes/light.js";

@@ -1,6 +1,5 @@
 import img1_1 from '../../assets/ohm/1-1.png';
 import img1_2 from '../../assets/ohm/1-2.png';
-import img1_3 from '../../assets/ohm/1-3.png';
 import img1_4 from '../../assets/ohm/1-4.png';
 import discord from '../../assets/ohm/discord.png';
 
