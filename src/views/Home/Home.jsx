@@ -194,8 +194,9 @@ function Home() {
       <div className="moban" onClick={() => ShowhideClick()} >
         <div className="CaiDanlieBiao">
           <img src={Logoimg} alt="" className="logo2" />
-          <div className="lis2"><a className="a" href="/stake">Stake</a></div>
-          <div className="lis2"><a className="a" href="/bonds">Bond</a></div>
+          <div className="lis2"><a className="a" href="https://pancakeswap.finance/swap/0x2794553775D6c41f54641C464CdEF5037861A0Dd">Buy On Pancakeswap</a></div>
+          <div className="lis2"><a className="a" href="https://poocoin.app/tokens/0x2794553775D6c41f54641C464CdEF5037861A0Dd">Chart</a></div>
+          <div className="lis2"><a className="a" href="/bonds">Bonds</a></div>
         </div>
       </div> : null}
 
