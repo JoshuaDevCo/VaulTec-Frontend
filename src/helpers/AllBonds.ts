@@ -87,7 +87,7 @@ export const VAULT = new CustomBond({
     let bourboncakePrice = await EthBondContract.assetPrice();
     bourboncakePrice = bourboncakePrice / Math.pow(10, 8);
     const token = this.getContractForReserve(networkID, provider);
-    let bourboncakeAmount = await token.balanceOf(addresses[networkID].TREASURY_ADDRESS);
+    let bourboncakeAmount = await token.balanceOf(addresses[networkID].TREASURY_ADDRESS).mul;
     bourboncakeAmount = bourboncakeAmount / Math.pow(10, 18);
     return bourboncakeAmount * bourboncakePrice;
   },

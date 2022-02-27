@@ -105,7 +105,6 @@ function BondPurchase({ bond, slippage, recipientAddress }) {
   const setMax = () => {
     let maxQ;
     if (bond.maxBondPrice * bond.bondPrice < Number(bond.balance)) {
-      // there is precision loss here on Number(bond.balance)
       maxQ = bond.maxBondPrice * bond.bondPrice.toString();
     } else {
       maxQ = bond.balance;
